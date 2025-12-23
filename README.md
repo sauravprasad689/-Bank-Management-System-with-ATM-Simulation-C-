@@ -1,20 +1,91 @@
-This is a basic calculator project built using C++ and Object-Oriented Programming (OOPs) concepts.
-The project demonstrates the use of classes, objects, and modular programming by separating logic into multiple files.
+🏦 Bank Management System with ATM Simulation
 
-📌 Key Features
+A clean, beginner-friendly C++ project that simulates how a real bank and ATM work — built with OOP principles, structured code, and persistent storage.
 
-Performs basic arithmetic operations: Addition, Subtraction, Multiplication, Division.
+✨ Why this project?
 
-Uses separate header and implementation files for clean code structure.
+Because banking systems are everywhere — and this project shows how real-world logic can be modeled using Object-Oriented Programming in C++.
+No fancy buzzwords, just solid fundamentals done right.
 
-Shows practical use of Encapsulation and Abstraction.
+🔍 What it does (in simple terms)
 
-Organized in a way that is easy to compile and extend.
+Admin can create, modify, delete, and manage accounts
 
-🛠️ Tech Stack
+Customers can log in like an ATM
 
-Language: C++
+Supports deposit, withdrawal, transfer, balance check
 
-Paradigm: Object-Oriented Programming (OOP)
+Keeps transaction history
 
-IDE/Compiler: VS Code / g++
+Saves data permanently using files (even after program closes)
+
+Basically: mini bank, real logic.
+
+🧠 Core Concepts Used (Technical)
+
+Language: C++ (C++17)
+
+Programming Paradigm: Object-Oriented Programming (OOP)
+
+Key OOP Principles:
+
+Encapsulation
+
+Abstraction
+
+Modular Design
+
+Data Structures: vector
+
+File Handling: Persistent storage using .dat files
+
+Environment: VS Code / g++ (Windows)
+
+🧩 Project Structure
+BankManagementSystem/
+│
+├── main.cpp              # Entry point & main menu
+├── Account.h / .cpp      # Account data & operations
+├── Transaction.h / .cpp  # Transaction records
+├── Bank.h / .cpp         # Admin-side logic
+├── ATM.h / .cpp          # Customer-side (ATM) logic
+├── accounts.dat          # Stored account data
+└── transactions.dat      # Stored transaction history
+
+🔄 How the system works (high-level)
+
+Program starts → existing data loads from files
+
+User selects Admin or Customer
+
+Actions update data in memory
+
+Every important change is saved to files
+
+On restart → data is restored automatically
+
+Just like how real banks maintain records.
+
+▶️ How to Run
+g++ -std=gnu++17 *.cpp -o bank_system
+./bank_system
+
+🧪 Example Features
+
+Secure login using Account Number + PIN
+
+Balance validation before withdrawal/transfer
+
+Separate roles for Admin vs Customer
+
+Transaction logs for transparency
+
+🚀 Learning Outcomes
+
+Understand how real systems are structured
+
+Apply OOP concepts in a practical project
+
+Learn data flow from user → memory → file
+
+Gain confidence in multi-file C++ projects
