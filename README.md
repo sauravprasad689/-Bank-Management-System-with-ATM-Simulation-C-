@@ -1,189 +1,157 @@
-🏦 Bank Management System with ATM Simulation (C++)
+# Bank Management System (C++)
 
-A clean and beginner-friendly C++ console project that simulates how a basic bank and ATM system works.
+## Overview
 
-This project focuses on solid Object-Oriented Programming (OOP) principles and structured multi-file C++ development.
+This project is a console-based Bank Management System implemented in C++ using Object-Oriented Programming principles. It simulates basic banking operations such as account creation, deposits, withdrawals, and transaction tracking. The system is modular, with separate classes handling accounts, transactions, and overall bank operations.
 
-No over-engineering.
-No unnecessary frameworks.
+The goal of this project is to demonstrate strong fundamentals in C++, OOP design, and basic system architecture.
 
-Just good old C++ doing useful things.
+---
 
-✨ Project Overview
+## Features
 
-Imagine a tiny ATM running inside your terminal.
+* Create new bank accounts
+* Deposit money into an account
+* Withdraw money from an account
+* Transfer money between accounts
+* Maintain transaction history
+* Persistent data storage using file handling
+* Role-based flow (Admin / Manager / Customer)
 
-This program allows users to perform common banking operations such as creating accounts, depositing money, withdrawing funds, and checking balances.
+---
 
-Think of it as a mini banking system — minus the long queues and paperwork.
+## Technologies Used
 
-⚙️ Features
+* Language: C++
+* Concepts:
 
-• Create new bank accounts
-• Deposit money into an account
-• Withdraw money with balance validation
-• Check account balance
-• Display all accounts in the system
-• Modular multi-file C++ project structure
-• Clear separation of responsibilities using classes
+  * Object-Oriented Programming (Encapsulation, Abstraction)
+  * File Handling
+  * STL (Vectors)
+  * Enums for transaction types
+  * Modular code structure
 
-Bonus feature:
-• No hidden bank charges (your terminal is very generous 😄)
+---
 
-🧠 Concepts Demonstrated
+## Project Structure
 
-This project was built to practice core C++ programming and OOP fundamentals.
+```
+.
+├── Account.h / Account.cpp       # Handles account details and operations
+├── Transaction.h / Transaction.cpp # Stores transaction data
+├── Bank.h / Bank.cpp             # Core logic of the system
+├── ATM.h / ATM.cpp               # Interface layer for user interaction
+├── Utils.h                       # Utility/helper functions
+├── main.cpp                      # Entry point and program flow
+```
 
-Language
+---
 
-• C++ (C++17 compatible)
+## Key Concepts Used
 
-Programming Paradigm
+### 1. Classes and Encapsulation
 
-• Object-Oriented Programming (OOP)
+Each entity (Account, Transaction, Bank) is represented as a class with private data members and public methods.
 
-Concepts Used
+### 2. Enum Usage
 
-• Classes and Objects
-• Encapsulation
-• Modular Code Design
-• Function Separation
-• Basic Input Validation
-• STL vector for storing accounts
+Transaction types are represented using enums:
 
-The goal was simple:
-write readable code that models real-world logic.
+```
+enum TransactionType {
+    DEPOSIT,
+    WITHDRAW,
+    TRANSFER
+};
+```
 
-🧩 Project Structure
-Bank-Management-System
-│
-├── main.cpp
-├── Bank.h / Bank.cpp
-├── Account.h / Account.cpp
-├── ATM.h / ATM.cpp
-├── Transaction.h / Transaction.cpp
-└── Utils.h
-File Responsibilities
+This improves readability and avoids using raw integers.
 
-main.cpp
+### 3. File Handling
 
-• Entry point of the program
-• Displays the ATM menu
-• Handles user input
+Data is stored and retrieved from files to ensure persistence between program runs.
 
-Bank Class
+### 4. Modular Design
 
-• Stores and manages all accounts
-• Creates and searches accounts
+The system is divided into multiple files to improve maintainability and readability.
 
-Account Class
+---
 
-• Represents individual bank accounts
-• Handles deposit, withdrawal, and display operations
+## How It Works
 
-ATM Class
+1. The program starts from `main.cpp`
+2. User selects a role (Admin / Manager / Customer)
+3. Based on the role:
 
-• Acts as the interface between user actions and account operations
+   * Accounts are created or accessed
+   * Transactions are performed
+4. All operations are handled by the `Bank` class
+5. Data is stored using file handling
 
-Transaction Class
+---
 
-• Designed for future transaction tracking features
+## Example Flow
 
-Utils.h
+* Create Account
+* Deposit Amount
+* Withdraw Amount
+* View Balance
+* Transfer Funds
 
-• Utility helper functions (like date/time generation)
+Each action generates a transaction record.
 
-🔄 System Flow
+---
 
-The system follows a simple logical flow.
+## How to Run
 
-User Interaction
-      ↓
-ATM Menu (main.cpp)
-      ↓
-Bank System
-      ↓
-Account Operations
-      ↓
-Balance Updates
+### Prerequisites
 
-Or in even simpler terms:
+* C++ compiler (g++ recommended)
 
-User → ATM → Bank → Account
-▶️ How to Run
+### Steps
 
-Compile the project using g++
+1. Clone the repository:
 
-g++ main.cpp Bank.cpp ATM.cpp Account.cpp -o bank_system
+```
+git clone https://github.com/your-username/bank-management-system.git
+```
 
-Run the program
+2. Navigate to the project folder:
 
-./bank_system
+```
+cd bank-management-system
+```
 
-You should see something like this:
+3. Compile the code:
 
-===== BANK ATM MENU =====
-1. Create Account
-2. Deposit Money
-3. Withdraw Money
-4. Check Balance
-5. Show All Accounts
-6. Exit
+```
+g++ main.cpp Account.cpp Transaction.cpp Bank.cpp ATM.cpp -o bank
+```
 
-Pro tip:
-Option 6 is still the safest financial decision.
+4. Run the program:
 
-🧪 Example Usage
+```
+./bank
+```
 
-Create an account
+---
 
-Enter Account No: 101
-Enter Holder Name: Saurav
-Enter Initial Balance: 5000
+## Future Improvements
 
-Deposit money
+* Add GUI interface
+* Implement database (MySQL / SQLite)
+* Improve authentication system
+* Add multi-user concurrency support
+* Enhance transaction security
 
-Enter Account No: 101
-Enter Deposit Amount: 1000
+---
 
-Withdraw money
-
-Enter Withdraw Amount: 2000
-
-The system automatically checks whether enough balance is available before allowing withdrawals.
-
-(Your ATM is polite but strict.)
-
-🎯 Learning Outcomes
-
-Working on this project helps in understanding:
-
-• How real-world systems can be modeled using code
-• How to structure a multi-file C++ project
-• How different classes interact in a program
-• How to design modular and maintainable code
-• How user input flows through a system
-
-It’s a great beginner project for practicing OOP with practical logic.
-
-🚀 Possible Future Improvements
-
-If this project were expanded further, the following features could be added:
-
-• PIN-based authentication
-• Account deletion and modification
-• Money transfer between accounts
-• Transaction history tracking
-• File-based persistent storage
-• Graphical interface (GUI)
-
-Because every banking system eventually needs version 2.0.
-
-👨‍💻 Author
+## Author
 
 Saurav Prasad
 
-Built while learning and experimenting with Object-Oriented Programming in C++ and system design fundamentals.
+---
 
-If you’re reviewing this project —
-thanks for stopping by 🤝
+## Notes
+
+This project is built for learning purposes and demonstrates core C++ and OOP concepts. It is not intended for production use.
